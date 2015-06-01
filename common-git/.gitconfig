@@ -1,7 +1,7 @@
 [user]
 	useconfigonly = true
 	name = Eric Hansander
-	email = ehdr@erichansander.com
+	email = eric@izettle.com
 [core]
 	excludesfile = ~/.gitignore
         pager = less -FX
