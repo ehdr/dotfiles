@@ -1,0 +1,13 @@
+[user]
+    name = Eric Hansander
+    # intentional typo for email, append ' = <email address>' before using
+    email
+[color]
+    ui = auto
+[push]
+    default = simple
+[alias]
+    co = checkout
+    purr = pull --rebase
+    qamend = commit --amend --no-edit
+    amend-identical = commit --amend -C HEAD

@@ -1,0 +1,46 @@
+# Enable 8-bit input
+set meta-flag on
+set input-meta on
+set output-meta on
+
+set convert-meta off    # turn off 8th bit stripping
+
+# My preferences
+set bell-style visible
+set completion-ignore-case on
+set editing-mode emacs
+set expand-tilde off
+set horizontal-scroll-mode off
+set keymap emacs
+set mark-directories on
+set show-all-if-ambiguous on
+set visible-stats on
+
+
+# Key-bindings
+
+$if term=rxvt
+"\e[8~": end-of-line
+$endif
+
+## for linux console
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+## mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+## for (non-RH/Debian) xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+## map "page up" and "page down" to search history
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
