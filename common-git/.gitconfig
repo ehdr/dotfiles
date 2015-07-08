@@ -1,7 +1,6 @@
 [user]
-    name = Eric Hansander
-    # intentional typo for email, append ' = <email address>' before using
-    email
+#    name =
+#    email =
 [color]
     ui = auto
 [push]
