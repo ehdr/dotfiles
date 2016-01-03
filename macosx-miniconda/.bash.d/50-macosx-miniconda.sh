@@ -7,5 +7,9 @@ is_interactive_shell || return
 
 ## Convenience function for Anaconda miniconda Python environments
 cenv () {
-  source ~/miniconda/bin/activate $*
+  if [ -z "$*" ]; then
+    echo "CONDA_DEFAULT_ENV: ${CONDA_DEFAULT_ENV:-[none]}"
+  else
+    source ~/miniconda/bin/activate $*
+  fi
 }
