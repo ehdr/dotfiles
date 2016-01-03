@@ -1,0 +1,7 @@
+.container {
+  width:100% !important;
+}
+
+div.text_cell {
+  max-width: 50em;
+}
