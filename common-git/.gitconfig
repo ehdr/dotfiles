@@ -10,7 +10,9 @@
     st = status
     br = branch
     ol = log --pretty=oneline --abbrev-commit
+    dump = cat-file -p
     lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
     purr = pull --rebase
     qamend = commit --amend --no-edit
     amend-identical = commit --amend -C HEAD
+    type = cat-file -t
