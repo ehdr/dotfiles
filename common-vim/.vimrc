@@ -4,10 +4,26 @@ endif
 
 set nocompatible    " no vi compatibility mode
 
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Be smart when using tabs
+set smarttab
+
+set autoindent
+set smartindent
+
 set showcmd         " info about ongoing cmd, e.g. selection dimensions
 set laststatus=2    " display status line always
 
 set backspace=indent,eol,start
+set whichwrap+=<,>,h,l,[,]
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" For regular expressions turn magic on
+set magic
 
 set nobackup
 
@@ -22,7 +38,10 @@ set wildmenu
 
 set history=10000
 
+set lazyredraw
+
 set nowrap
+set scrolloff=7
 
 set mouse=a
 
@@ -40,6 +59,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
     set guicursor+=i:blinkwait10
 endif
 
+" Use relative line numbers
+if exists("&relativenumber")
+  set relativenumber
+  au BufReadPost * set relativenumber
+endif
 
 " trick to enable undo after Ctrl-u and Ctrl-w
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U

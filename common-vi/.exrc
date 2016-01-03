@@ -13,3 +13,6 @@ set ignorecase      " in search
 
 set autoindent
 set shiftwidth=8
+
+" Use spaces instead of tabs
+set expandtab
