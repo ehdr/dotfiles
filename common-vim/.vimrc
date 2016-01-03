@@ -72,3 +72,14 @@ inoremap <c-w> <c-g>u<c-w>
 
 " use Ctrl-l to clear search highlights
 nnoremap <C-L> :nohlsearch<CR><C-L>
+
+" wean off of arrow keys...
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
