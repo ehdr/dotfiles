@@ -1,4 +1,5 @@
 [user]
+    useconfigonly = true
 #    name =
 #    email =
 [color]
