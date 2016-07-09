@@ -9,6 +9,8 @@ alias j=jobs
 
 alias path='echo -e ${PATH//:/\\n}'
 
+alias reload_shell='exec -l "$SHELL"'
+
 #alias e='$EDITOR'
 #alias m='mutt'
 #alias p='$PAGER'
