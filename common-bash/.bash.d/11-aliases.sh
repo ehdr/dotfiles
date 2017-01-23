@@ -32,3 +32,6 @@ alias fgrep="fgrep $GREP_OPTIONS"
 alias egrep="egrep $GREP_OPTIONS"
 
 alias wget='wget -c' # continue getting partially-downloaded files
+
+alias edf='$EDITOR ~/.dotfiles'
+alias rldf='exec -l $SHELL'
