@@ -2,6 +2,8 @@
 	useconfigonly = true
 # 	name =
 # 	email =
+[core]
+	excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [push]
