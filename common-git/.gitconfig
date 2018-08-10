@@ -1,26 +1,26 @@
 [user]
-    useconfigonly = true
-#    name =
-#    email =
+	useconfigonly = true
+# 	name =
+# 	email =
 [color]
-    ui = auto
+	ui = auto
 [push]
-    default = simple
+	default = simple
 [alias]
-    amend-identical = commit --amend -C HEAD
-    br = branch
-    cloner = clone --recursive
-    co = checkout
-    dump = cat-file -p
-    it = '!git init && git commit -m "root" --allow-empty'
-    lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
-    ol = log --pretty=oneline --abbrev-commit
-    please = push --force-with-lease
-    purr = pull --rebase
-    qamend = commit --amend --no-edit
-    sh = status --short --branch
-    st = status
-    stsh = stash --keep-index
-    staash = stash --include-untracked
-    staaash = stash --all
-    type = cat-file -t
+	amend-identical = commit --amend -C HEAD
+	br = branch
+	cloner = clone --recursive
+	co = checkout
+	dump = cat-file -p
+	it = '!git init && git commit -m "root" --allow-empty'
+	lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
+	ol = log --pretty=oneline --abbrev-commit
+	please = push --force-with-lease
+	purr = pull --rebase
+	qamend = commit --amend --no-edit
+	sh = status --short --branch
+	st = status
+	stsh = stash --keep-index
+	staash = stash --include-untracked
+	staaash = stash --all
+	type = cat-file -t
