@@ -3,5 +3,14 @@
 }
 
 div.text_cell {
-  max-width: 50em;
+  max-width: 70em;
+}
+div.text_cell_render {
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  line-height: 135%;
+  font-size: 120%;
+}
+
+.warning {
+  color: rgb( 240, 20, 20 )
 }
