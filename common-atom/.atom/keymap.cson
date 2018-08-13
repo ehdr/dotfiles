@@ -32,7 +32,3 @@
 'atom-text-editor':
   'alt-up': 'expand-region:expand'
   'alt-down': 'expand-region:shrink'
-
-# Package: tab-switcher
-'atom-workspace':
-  'ctrl-tab': 'tab-switcher:next'
