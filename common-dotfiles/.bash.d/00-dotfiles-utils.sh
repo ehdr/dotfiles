@@ -69,3 +69,7 @@ EOF
     local p=$(echo "$1" | tr ":" "\n" | grep -v "^$2\$" | tr "\n" ":")
     echo ${p%:}
 }
+
+function df_error_message() {
+    echo "dotfiles: $*" 1>&2
+}
