@@ -18,11 +18,6 @@ export HISTSIZE=8192
 export HISTIGNORE='ls: *:&'
 export HISTFILESIZE=8192
 
-# dircolors
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 # Shell options
 set -o noclobber
 set -o notify

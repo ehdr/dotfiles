@@ -11,6 +11,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 alias reload_shell='exec -l "$SHELL"'
 
+alias ls_executable=ls
 #alias e='$EDITOR'
 #alias m='mutt'
 #alias p='$PAGER'
@@ -19,12 +20,12 @@ alias reload_shell='exec -l "$SHELL"'
 
 LS_COLOR_FLAG='--color=auto'
 LS_OPTIONS='-Fh $LS_COLOR_FLAG'
-alias ls="ls $LS_OPTIONS"
-alias ll="ls $LS_OPTIONS -l"
-alias la="ls $LS_OPTIONS -A"
-alias laa="ls $LS_OPTIONS -a"
-alias lla="ls $LS_OPTIONS -lA"
-alias llaa="ls $LS_OPTIONS -la"
+alias ls="ls_executable $LS_OPTIONS"
+alias ll="ls_executable $LS_OPTIONS -l"
+alias la="ls_executable $LS_OPTIONS -A"
+alias laa="ls_executable $LS_OPTIONS -a"
+alias lla="ls_executable $LS_OPTIONS -lA"
+alias llaa="ls_executable $LS_OPTIONS -la"
 
 GREP_OPTIONS='--color=auto'
 alias grep="grep $GREP_OPTIONS"
