@@ -3,3 +3,4 @@
 # clone Tmux Plugin Manager (tpm)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+df_log 'common-tmux: hit `prefix + I` after launching tmux to fetch plugins and install them'
