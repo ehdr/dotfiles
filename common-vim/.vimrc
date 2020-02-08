@@ -73,6 +73,15 @@ inoremap <c-w> <c-g>u<c-w>
 " use Ctrl-l to clear search highlights
 nnoremap <C-L> :nohlsearch<CR><C-L>
 
+" more intuitive split opening
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
 " wean off of arrow keys...
 noremap <Up> <nop>
 noremap <Down> <nop>
