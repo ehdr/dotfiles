@@ -5,6 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore
         pager = less -FX
+	commitGraph = true
 [color]
 	ui = auto
 [push]
@@ -27,3 +28,5 @@
 	staash = stash --include-untracked
 	staaash = stash --all
 	type = cat-file -t
+[gc]
+	writeCommitGraph = true
