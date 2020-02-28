@@ -10,6 +10,9 @@ set encoding=utf8
 " Be smart when using tabs
 set smarttab
 
+set expandtab
+set shiftwidth=4
+
 set autoindent
 set smartindent
 
