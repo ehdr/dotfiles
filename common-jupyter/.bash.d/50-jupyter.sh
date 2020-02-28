@@ -1,3 +1,3 @@
 is_interactive_shell || return
 
-alias jnb='jupyter notebook'
+alias jnb='jupyter notebook ${*:---notebook-dir=~}'
