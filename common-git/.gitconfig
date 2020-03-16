@@ -16,15 +16,16 @@
     cloner = clone --recursive
     co = checkout
     dump = cat-file -p
-    it = '!git init && git commit -m "root" --allow-empty'
+    it = "!git init && git commit -m 'root' --allow-empty"
+    lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
     lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
     ol = log --pretty=oneline --abbrev-commit
     please = push --force-with-lease
     push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
     purr = pull --rebase
     qamend = commit --amend --no-edit
+    redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
     sh = status --short --branch
-    st = status
     stsh = stash --keep-index
     staash = stash --include-untracked
     staaash = stash --all
