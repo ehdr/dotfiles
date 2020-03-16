@@ -1,0 +1,1 @@
+exec(open(os.path.expanduser('~/.pdbrc-code.py')).read())
