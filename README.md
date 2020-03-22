@@ -11,4 +11,4 @@ Inspired by many, especially [xero's][2] use of [GNU Stow][3].
 ## Installation
 
 1. Install `stow` (e.g. `brew install stow`)
-2. stow what you want (e.g. `stow -v common-* macosx-*`)
+2. stow what you want (e.g. `stow -v common-* macos-*`)
