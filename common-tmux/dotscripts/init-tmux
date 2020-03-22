@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # clone Tmux Plugin Manager (tpm)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
