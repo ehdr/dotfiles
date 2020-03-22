@@ -1,0 +1,6 @@
+.envrc
+.direnv/
+
+venv/
+
+.idea/
