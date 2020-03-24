@@ -2,3 +2,5 @@ source ~/.vimrc
 
 " wean off of Esc key... not good in terminals though, so only for IdeaVIM
 inoremap <esc> <NOP>
+
+set ideajoin
