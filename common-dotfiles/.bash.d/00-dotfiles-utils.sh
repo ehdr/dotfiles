@@ -69,3 +69,11 @@ EOF
     local p=$(echo "$1" | tr ":" "\n" | grep -v "^$2\$" | tr "\n" ":")
     echo ${p%:}
 }
+
+function df_confirm() {
+    read -p "${1:-'Ok?'} [y/N] " yn
+    case $yn in
+        [Yy]*) return 0; ;;
+        *) return 1 ;;
+    esac
+}
