@@ -29,6 +29,7 @@
     stsh = stash --keep-index
     staash = stash --include-untracked
     staaash = stash --all
+    sw = switch
     type = cat-file -t
 
 # conveniences for working with GitHub and PRs
