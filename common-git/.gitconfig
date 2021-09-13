@@ -38,3 +38,5 @@
     open-pr = "!open https://github.com/\"$(git ls-remote --get-url origin | perl -pe 's/^git\\@github\\.com:(.+?)(\\.git)?$/$1/')\"/pull/new/\"$(git rev-parse --abbrev-ref HEAD)\""
 [gc]
     writeCommitGraph = true
+[fetch]
+    prune = true
