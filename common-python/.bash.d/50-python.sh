@@ -1,7 +1,15 @@
-is_interactive_shell || return
-
 ## Initilialize pyenv
 if is_installed pyenv; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+
+is_interactive_shell || return
+
+## Initilialize pyenv for interactive shells
+if is_installed pyenv; then
+    eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
 fi
 
