@@ -29,3 +29,9 @@ function git-cleanup () {
     echo "GC and pruning..."
     git gc --prune=now  # clean up "loose objects": https://stackoverflow.com/q/21457407/5039
 }
+
+function git-absolute-path () {
+    fullpath=$([[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}")
+    gitroot="$(git rev-parse --show-toplevel)" || return 1
+    [[ "$fullpath" =~ "$gitroot" ]] && echo "${fullpath/$gitroot\//}"
+}
