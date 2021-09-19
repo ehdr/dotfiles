@@ -1,47 +1,47 @@
 [user]
-    useconfigonly = true
-    name = Eric Hansander
-    email = ehdr@erichansander.com
+	useconfigonly = true
+	name = Eric Hansander
+	email = ehdr@erichansander.com
 [core]
-    excludesfile = ~/.gitignore
-    pager = less -FX
-    commitGraph = true
+	excludesfile = ~/.gitignore
+	pager = less -FX
+	commitGraph = true
 [color]
-    ui = auto
+	ui = auto
+[gc]
+	writeCommitGraph = true
+[fetch]
+	prune = true
 [push]
-    default = simple
+	default = simple
 [alias]
-    amend-identical = commit --amend -C HEAD
-    br = branch
-    cloner = clone --recursive
-    co = checkout
-    dump = cat-file -p
-    it = "!git init && git commit -m 'root' --allow-empty"
-    lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
-    lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
-    ol = log --pretty=oneline --abbrev-commit
-    please = push --force-with-lease
-    push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
-    purr = pull --rebase
-    qamend = commit --amend --no-edit
-    redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
-    sh = status --short --branch
-    stsh = stash --keep-index
-    staash = stash --include-untracked
-    staaash = stash --all
-    sw = switch
-    type = cat-file -t
+	amend-identical = commit --amend -C HEAD
+	br = branch
+	cloner = clone --recursive
+	co = checkout
+	dump = cat-file -p
+	it = "!git init && git commit -m 'root' --allow-empty"
+	lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
+	lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
+	ol = log --pretty=oneline --abbrev-commit
+	please = push --force-with-lease
+	push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+	purr = pull --rebase
+	qamend = commit --amend --no-edit
+	redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
+	sh = status --short --branch
+	stsh = stash --keep-index
+	staash = stash --include-untracked
+	staaash = stash --all
+	sw = switch
+	type = cat-file -t
 
 # conveniences for working with GitHub and PRs
-    pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-    pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-    open-pr = "!open https://github.com/\"$(git ls-remote --get-url origin | perl -pe 's/^git\\@github\\.com:(.+?)(\\.git)?$/$1/')\"/pull/new/\"$(git rev-parse --abbrev-ref HEAD)\""
-[gc]
-    writeCommitGraph = true
-[fetch]
-    prune = true
+	pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	open-pr = "!open https://github.com/\"$(git ls-remote --get-url origin | perl -pe 's/^git\\@github\\.com:(.+?)(\\.git)?$/$1/')\"/pull/new/\"$(git rev-parse --abbrev-ref HEAD)\""
 [filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
