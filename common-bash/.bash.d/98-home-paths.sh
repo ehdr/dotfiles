@@ -1,5 +1,10 @@
 export PATH
 export MANPATH
 
-[ -d "$HOME/bin" ] && PATH=$(path_prepend "$PATH" "$HOME/bin")
-[ -d "$HOME/man" ] && MANPATH=$(path_prepend "$MANPATH" "$HOME/man")
+for dir in bin .local/bin; do
+    [ -d "$HOME/$dir" ] && PATH=$(path_prepend "$PATH" "$HOME/$dir")
+done
+
+for dir in man .local/man; do
+    [ -d "$HOME/$dir" ] && MANPATH=$(path_prepend "$MANPATH" "$HOME/$dir")
+done
