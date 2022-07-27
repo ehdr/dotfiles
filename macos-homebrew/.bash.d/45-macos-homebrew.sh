@@ -1,6 +1,6 @@
-PATH=$(path_prepend "$PATH" "/usr/local/sbin")
-PATH=$(path_prepend "$PATH" "/usr/local/bin")
-
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 is_interactive_shell || return
 
