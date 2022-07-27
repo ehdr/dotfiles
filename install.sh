@@ -16,5 +16,5 @@ done
 echo "done."
 
 echo "Stowing..."
-stow -Rv ${packages}
+for p in ${packages}; do stow -Rv ${p}; done
 echo "done."
