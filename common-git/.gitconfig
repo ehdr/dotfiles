@@ -32,6 +32,8 @@
 	qamend = commit --amend --no-edit
 	redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
 	sh = status --short --branch
+	srebi = "!f() { git stash && ( git rebase -i \"${@}\"; git stash pop ); }; f"
+	spurr = "!f() { git stash && ( git purr; git stash pop ); }; f"
 	stsh = stash --keep-index
 	staash = stash --include-untracked
 	staaash = stash --all
