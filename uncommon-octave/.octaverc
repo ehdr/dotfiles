@@ -1,0 +1,13 @@
+function retval = combinations(n,m)
+  retval = bincoeff(n,m);
+endfunction
+
+function retval = permutations(n,m)
+  retval = bincoeff(n,m)*factorial(m);
+endfunction
+
+% enable vim as editor, as suggested here:
+% http://wiki.octave.org/Vim
+edit mode sync
+edit home .
+EDITOR('vim > /dev/tty 2>&1 < /dev/tty %s')
