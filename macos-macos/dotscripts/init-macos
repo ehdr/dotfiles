@@ -1,7 +1,9 @@
 #!/bin/sh
 
-set -e
+set -eu
 set -x
+
+sudo launchctl config user umask 077
 
 echo "Configuring..."
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Eric Hansander <eric@hansander.com>"
@@ -96,16 +98,21 @@ defaults write com.apple.Finder NewWindowTargetPath -string "file://${HOME}/Down
 
 # Preferred view style
 # Icon View   : `icnv`
-# List View   : `nlsv`
+# List View   : `Nlsv`
 # Column View : `clmv`
-# Cover Flow  : `flwv`
+# Cover Flow  : `Flwv`
 # After configuring preferred view style, clear all `.DS_Store` files
 # to ensure settings are applied for every directory
-# sudo find / -name ".DS_Store" --delete
-defaults write com.apple.Finder FXPreferredViewStyle -string "clmv"
+# sudo find / -name ".DS_Store" -delete
+defaults write com.apple.Finder FXPreferredViewStyle -string "Nlsv"
 
 defaults write -g AppleShowAllExtensions -bool true
 defaults write -g QLPanelAnimationDuration -float 0
 
 chflags nohidden ~/Library/
 killall Finder
+
+echo "- Other settings"
+# disable sleep and standby completely when charger is connected
+pmset -c sleep 0 # default 20
+pmset -c standby 0 #default 1
