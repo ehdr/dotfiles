@@ -2,7 +2,8 @@ is_interactive_shell || return
 
 function ghopen () {
     if [ "$1" = "-m" ]; then
-        commit="master"
+        default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||')"
+        commit="$default_branch"
         shift
     else
         commit="$(git rev-parse HEAD)"

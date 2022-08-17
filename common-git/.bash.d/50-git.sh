@@ -1,7 +1,10 @@
 is_interactive_shell || return
 
 function git-prune-merged-branches () {
-    main_branch="${1:-master}"
+    default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||')"
+    main_branch="${1:-$default_branch}"
+
+    echo "Checking merged branches against main branch '$main_branch'..."
 
     merged_branches=""
     for b in $(git for-each-ref refs/heads --format="%(refname:short)" | grep -v ${main_branch}); do
