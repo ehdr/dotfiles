@@ -20,7 +20,6 @@
 	amend-identical = commit --amend -C HEAD
 	br = branch
 	cloner = clone --recursive
-	co = checkout
 	dump = cat-file -p
 	it = "!git init && git commit -m 'root' --allow-empty"
 	lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
