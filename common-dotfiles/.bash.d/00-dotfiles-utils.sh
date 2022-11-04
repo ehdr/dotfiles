@@ -4,6 +4,7 @@ if [ -t 1 ]; then
     if test -n "$ncolors" && test $ncolors -ge 8; then
         TERM_COLOR_ENABLED=true
     fi
+    unset ncolors
 fi
 
 function is_color_capable_shell() {

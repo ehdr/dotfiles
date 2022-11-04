@@ -1,12 +1,12 @@
 is_interactive_shell || return
 
 function git-prune-merged-branches () {
-    default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||')"
-    main_branch="${1:-$default_branch}"
+    local default_branch="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||')"
+    local main_branch="${1:-$default_branch}"
 
     echo "Checking merged branches against main branch '$main_branch'..."
 
-    merged_branches=""
+    local merged_branches=""
     for b in $(git for-each-ref refs/heads --format="%(refname:short)" | grep -v ${main_branch}); do
         # git cherry prefixes each commit with "+" if it's not included and "-" if it is, so check if there are no "+" lines:
         if [[ ! $(git cherry ${main_branch} ${b} | grep "^+") ]]; then
@@ -14,7 +14,7 @@ function git-prune-merged-branches () {
         fi
     done
 
-    branches_to_delete=""
+    local branches_to_delete=""
     for b in ${merged_branches}; do
         if df_confirm "Delete branch: ${b}?"; then
             branches_to_delete="${branches_to_delete} ${b}"
@@ -34,7 +34,7 @@ function git-cleanup () {
 }
 
 function git-absolute-path () {
-    fullpath=$([[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}")
-    gitroot="$(git rev-parse --show-toplevel)" || return 1
+    local fullpath=$([[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}")
+    local gitroot="$(git rev-parse --show-toplevel)" || return 1
     [[ "$fullpath" =~ "$gitroot" ]] && echo "${fullpath/$gitroot\//}"
 }

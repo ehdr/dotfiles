@@ -7,7 +7,7 @@ alias mk='minikube kubectl --'
 
 function kgpg { kubectl get pods --sort-by=.metadata.creationTimestamp | egrep ${@:-''}; }
 function kgpg1p {
-    result=$(kgpg $*)
+    local result=$(kgpg $*)
     if [ -z "$result" -o "$(echo "$result" | grep -c '^')" != "1" ]; then
         >&2 echo "Need exactly one match, but got:"
         >&2 echo
@@ -16,5 +16,5 @@ function kgpg1p {
     fi
     echo "$result" | cut -d' ' -f1
 }
-function klg { pod=$(kgpg1p $*); (set -x; kubectl logs "$pod"; ) }
-function kesg { pod=$(kgpg1p $*); (set -x; kubectl exec -it "$pod" sh; ) }
+function klg { local pod=$(kgpg1p $*); (set -x; kubectl logs "$pod"; ) }
+function kesg { local pod=$(kgpg1p $*); (set -x; kubectl exec -it "$pod" sh; ) }

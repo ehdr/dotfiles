@@ -17,3 +17,4 @@ for util in gnu-getopt curl; do
         PATH=$(path_prepend "$PATH" "$util_path")
     fi
 done
+unset util util_path
