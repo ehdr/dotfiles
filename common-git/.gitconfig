@@ -21,6 +21,7 @@
 	br = branch
 	cloner = clone --recursive
 	dump = cat-file -p
+	incomimng = "!f() { git merge --no-ff --no-commit ${1}; echo 'diffing...'; git diff HEAD; echo 'end diff.'; git merge --abort; }; f"
 	it = "!git init && git commit -m 'root' --allow-empty"
 	lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
 	lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
