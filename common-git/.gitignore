@@ -1,8 +1,18 @@
+ehdr-local/
+
+# macOS
+.DS_Store
+
+# direnv
 .envrc
 .direnv/
 
+# Python virtual environments
+.venv/
 venv/
 
+# IntelliJ, PyCharm and their siblings
 .idea/
 
-ehdr-local/
+# GitHub Desktop
+.github/
