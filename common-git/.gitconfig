@@ -30,6 +30,7 @@
 	push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
 	purr = pull --rebase
 	qamend = commit --amend --no-edit
+	reauthor = commit --amend --no-edit --reset-author
 	redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
 	sh = status --short --branch
 	spurr = pull --rebase --autostash
