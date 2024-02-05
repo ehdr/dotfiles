@@ -7,6 +7,8 @@ fi
 
 is_interactive_shell || return
 
+export PIP_REQUIRE_VIRTUALENV=true
+
 ## Initilialize pyenv for interactive shells
 if is_installed pyenv; then
     eval "$(pyenv init --path)"
