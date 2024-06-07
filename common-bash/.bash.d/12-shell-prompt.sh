@@ -30,6 +30,13 @@ pwd_tail () {
     echo "$tail"
 }
 
+git_stashes() {
+    local stashes="$(git stash list 2>/dev/null | wc -l)"
+    if [ "$stashes" -gt 0 ]; then
+        echo " (git stashes: $stashes)"
+    fi
+}
+
 # $1: status of previous command
 prompt_character() {
     local last_status=$1
@@ -59,7 +66,7 @@ prompt_character() {
 
 dynamic_prompt() {
     last_status=$?
-    echo "$debian_chroot$(pwd_tail)$(prompt_character $last_status)"
+    echo "$debian_chroot$(pwd_tail)$(git_stashes)$(prompt_character $last_status)"
 }
 
 export PROMPT_COMMAND='PS1="$(dynamic_prompt) "'
