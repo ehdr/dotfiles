@@ -15,11 +15,16 @@ if is_installed pyenv; then
     eval "$(pyenv init -)"
 fi
 
+if is_installed uv; then
+    alias pip='uv pip'
+fi
+
 function penv {
     echo "# python"
     python --version
     which python
     which pip
+    which uv
     echo "# python3"
     python3 --version
     which python3
