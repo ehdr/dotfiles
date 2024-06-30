@@ -1,4 +1,5 @@
 ehdr-local/
+ehdr-scratch.*
 
 # macOS
 .DS_Store
@@ -13,6 +14,3 @@ venv/
 
 # IntelliJ, PyCharm and their siblings
 .idea/
-
-# GitHub Desktop
-.github/
