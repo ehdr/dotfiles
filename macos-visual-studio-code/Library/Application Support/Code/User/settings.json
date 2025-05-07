@@ -7,6 +7,7 @@
     },
     "[python]": {
         "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
@@ -26,7 +27,15 @@
     "files.autoSave": "onFocusChange",
     "git.autofetch": true,
     "liveshare.accessibility.soundsEnabled": false,
+    "makefile.configureAfterCommand": false,
+    "makefile.configureOnEdit": false,
+    "makefile.configureOnOpen": false,
     "markdown.updateLinksOnFileMove.enabled": "prompt",
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+    "notebook.formatOnSave.enabled": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.importFormat": "absolute",
@@ -38,6 +47,7 @@
     "python.terminal.activateEnvironment": true,
     "ruff.importStrategy": "fromEnvironment",
     "search.smartCase": true,
+    "terminal.integrated.scrollback": 10000,
     "window.newWindowDimensions": "maximized",
     "window.restoreFullscreen": true,
     "workbench.editor.restoreViewState": true,
