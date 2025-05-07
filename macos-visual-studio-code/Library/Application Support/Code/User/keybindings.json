@@ -50,4 +50,8 @@
         "command": "workbench.action.navigateForward",
         "when": "canNavigateForward",
     },
+    {
+        "key": "shift+cmd+k",
+        "command": "-aipopup.action.modal.generate",
+    },
 ]
