@@ -50,4 +50,10 @@ fi
 
 echo_and_run brew doctor
 
+leaves_installed_as_dependencies=$(brew leaves --installed-as-dependency)
+if [ -n "$leaves_installed_as_dependencies" ]; then
+  echo "Some leaf packages that were installed as dependencies remain:"
+  echo $leaves_installed_as_dependencies
+fi
+
 echo
