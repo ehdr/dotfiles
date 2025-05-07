@@ -1,0 +1,59 @@
+{
+    "[dart]": {
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off",
+        "files.trimTrailingWhitespace": true
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.rulers": [
+            120
+        ],
+        "files.trimTrailingWhitespace": true
+    },
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "scminput"
+    ],
+    "diffEditor.renderSideBySide": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.fontSize": 13,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.lightbulb.enabled": "onCode",
+    "files.autoSave": "onFocusChange",
+    "git.autofetch": true,
+    "liveshare.accessibility.soundsEnabled": false,
+    "makefile.configureAfterCommand": false,
+    "makefile.configureOnEdit": false,
+    "makefile.configureOnOpen": false,
+    "markdown.updateLinksOnFileMove.enabled": "prompt",
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+    "notebook.formatOnSave.enabled": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.inlayHints.functionReturnTypes": false,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.globalModuleInstallation": false,
+    "python.terminal.activateEnvironment": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "search.smartCase": true,
+    "terminal.integrated.scrollback": 10000,
+    "window.newWindowDimensions": "maximized",
+    "window.restoreFullscreen": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.editor.restoreViewState": true,
+    "workbench.startupEditor": "none"
+}
