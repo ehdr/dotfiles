@@ -10,4 +10,4 @@ function notify_after_long_running_command() {
     (notify-long-runner-finished.sh "$cmd" "$last_status" &)
 }
 
-export PROMPT_COMMAND="notify_after_long_running_command; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="notify_after_long_running_command; $PROMPT_COMMAND"
