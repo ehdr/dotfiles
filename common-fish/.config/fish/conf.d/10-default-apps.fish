@@ -11,7 +11,9 @@ end
 set -gx VISUAL "$EDITOR"
 
 ## PAGERS
-if is_installed less
+if is_installed bat
+    set -gx PAGER "bat"
+else if is_installed less
     set -gx PAGER "less"
 end
 if is_installed zless

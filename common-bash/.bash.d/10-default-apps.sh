@@ -12,7 +12,9 @@ export EDITOR
 export VISUAL="$EDITOR"
 
 ## PAGERS
-if is_installed less; then
+if is_installed bat; then
+    export PAGER="bat"
+elif is_installed less; then
     export PAGER="less"
 fi
 if is_installed zless; then
