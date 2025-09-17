@@ -14,3 +14,6 @@ venv/
 
 # IntelliJ, PyCharm and their siblings
 .idea/
+
+# Claude Code
+.claude/settings.local.json
