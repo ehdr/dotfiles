@@ -1,18 +1,6 @@
-## Initilialize pyenv
-if is_installed pyenv; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    PATH=$(path_prepend "$PATH" "$PYENV_ROOT/bin")
-fi
-
-
 is_interactive_shell || return
 
 export PIP_REQUIRE_VIRTUALENV=true
-
-## Initilialize pyenv for interactive shells
-if is_installed pyenv; then
-    eval "$(pyenv init -)"
-fi
 
 if is_installed uv; then
     alias pip='uv pip'

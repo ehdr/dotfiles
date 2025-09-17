@@ -1,17 +1,6 @@
-# Initialize pyenv
-if is_installed pyenv
-    set -gx PYENV_ROOT "$HOME/.pyenv"
-    fish_add_path "$PYENV_ROOT/bin"
-end
-
 is_interactive_shell; or return
 
 set -gx PIP_REQUIRE_VIRTUALENV true
-
-# Initialize pyenv for interactive shells
-if is_installed pyenv
-    pyenv init - | source
-end
 
 if is_installed uv
     abbr -a pip 'uv pip'
