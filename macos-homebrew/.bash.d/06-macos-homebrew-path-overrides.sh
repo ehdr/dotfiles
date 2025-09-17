@@ -1,7 +1,7 @@
 is_interactive_shell || return
 
 for util in coreutils findutils grep gawk gnu-sed gnu-tar gnu-indent gnu-which; do
-    util_path="$(brew --prefix)/opt/${util}/libexec"
+    util_path="${HOMEBREW_PREFIX}/opt/${util}/libexec"
     bin_dir="$util_path/gnubin"
     if [ ! -d "$bin_dir" ]; then
         df_error "macos-homebrew: failed to find $util - not adding to \$PATH"
@@ -16,7 +16,7 @@ for util in coreutils findutils grep gawk gnu-sed gnu-tar gnu-indent gnu-which; 
 done
 
 for util in man-db; do
-    util_path="$(brew --prefix)/opt/${util}/libexec"
+    util_path="${HOMEBREW_PREFIX}/opt/${util}/libexec"
     bin_dir="$util_path/bin"
     if [ ! -d "$bin_dir" ]; then
         df_error "macos-homebrew: failed to find $util - not adding to \$PATH"
@@ -32,7 +32,7 @@ done
 
 
 for util in curl gnu-getopt; do
-    util_path="$(brew --prefix)/opt/${util}"
+    util_path="${HOMEBREW_PREFIX}/opt/${util}"
     bin_dir="$util_path/bin"
     if [ ! -d "$bin_dir" ]; then
         df_error "macos-homebrew: failed to find ${util} - not adding to \$PATH"

@@ -10,7 +10,6 @@ set -gx PIP_REQUIRE_VIRTUALENV true
 
 # Initialize pyenv for interactive shells
 if is_installed pyenv
-    pyenv init --path | source
     pyenv init - | source
 end
 
