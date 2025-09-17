@@ -1,5 +1,4 @@
 is_interactive_shell || return
-
 is_installed tmux || return
 
 if [ ! -d ~/.tmux/plugins/tpm ]; then

@@ -1,6 +1,3 @@
-is_interactive_shell || return
+is_installed rbenv || return
 
-## Initilialize ruby environment
-if is_installed rbenv; then
-    eval "$(rbenv init -)"
-fi
+eval "$(rbenv init -)"
