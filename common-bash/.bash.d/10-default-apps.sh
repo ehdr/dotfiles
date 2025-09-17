@@ -1,9 +1,7 @@
 is_interactive_shell || return
 
 ## EDITOR
-if [ -x ~/bin/ehedit ]; then
-    EDITOR=~/bin/ehedit
-elif is_installed vim; then
+if is_installed vim; then
     EDITOR=vim
 elif is_installed vi; then
     EDITOR=vi
@@ -20,6 +18,3 @@ fi
 if is_installed zless; then
     export ZPAGER="zless"
 fi
-
-## BROWSER
-# export BROWSER=

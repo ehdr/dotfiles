@@ -4,7 +4,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-alias path='echo -e ${PATH//:/\\n}'
+alias ppath='echo -e ${PATH//:/\\n}'
 
 alias reload_shell='exec -l "$SHELL"'
 
@@ -21,5 +21,3 @@ GREP_OPTIONS='--color=auto'
 alias grep="grep $GREP_OPTIONS"
 alias fgrep="fgrep $GREP_OPTIONS"
 alias egrep="egrep $GREP_OPTIONS"
-
-alias wget='wget -c' # continue getting partially-downloaded files

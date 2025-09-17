@@ -19,14 +19,6 @@ function is_installed() {
     command -v "$1" 2>&1 > /dev/null
 }
 
-function confirm() {
-    read -p "${*:-OK?} [y/N] " -r
-    case "$REPLY" in
-      y|Y) return 0 ;;
-    esac
-    return 1
-}
-
 function path_prepend() {
     if [ -z "$2" ]; then
         >&2 cat <<EOF
@@ -75,6 +67,6 @@ function df_confirm() {
     read -p "${1:-'Ok?'} [y/N] " yn
     case $yn in
         [Yy]*) return 0; ;;
-        *) return 1 ;;
     esac
+    return 1
 }
