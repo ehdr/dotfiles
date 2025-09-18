@@ -1,5 +1,5 @@
 umask 077
-mesg n
+[ -t 0 ] && mesg n
 
 
 is_interactive_shell || return
