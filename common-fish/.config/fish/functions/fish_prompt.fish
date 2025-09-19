@@ -12,7 +12,7 @@ function fish_prompt --description 'Write out the prompt'
         if set -q fish_color_cwd_root
             set color_cwd $fish_color_cwd_root
         end
-        set suffix '#'z
+        set suffix '#'
     end
 
     # Write pipestatus
