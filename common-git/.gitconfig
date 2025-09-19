@@ -10,10 +10,12 @@
 	ui = auto
 [gc]
 	writeCommitGraph = true
-[fetch]
-	prune = true
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true
+[rebase]
+    updateRefs = true
 [push]
 	default = simple
 [alias]
