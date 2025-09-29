@@ -34,6 +34,7 @@
 	qamend = commit --amend --no-edit
 	reauthor = commit --amend --no-edit --reset-author
 	redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
+	root = commit -m "root" --allow-empty
 	sh = status --short --branch
 	spurr = pull --rebase --autostash
 	srebi = rebase --autostash -i
