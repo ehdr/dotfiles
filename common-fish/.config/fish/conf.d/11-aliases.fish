@@ -8,6 +8,7 @@ abbr -a ppath 'printf "%s\n" $PATH'
 
 abbr -a reload_shell 'exec fish'
 
+abbr -a la 'ls -A'
 abbr -a l. 'ls -d .*'
 
 # grep aliases with color support
