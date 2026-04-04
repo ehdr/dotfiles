@@ -15,7 +15,8 @@
 [fetch]
 	prune = true
 [rebase]
-    updateRefs = true
+	updateRefs = true
+	instructionFormat = %s <%an>
 [push]
 	default = simple
 [alias]
