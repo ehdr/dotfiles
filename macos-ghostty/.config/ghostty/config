@@ -41,3 +41,5 @@ font-family = JetBrainsMonoNerdFont
 font-size = 14
 font-thicken = true
 adjust-cell-height = 2
+
+window-save-state = always
