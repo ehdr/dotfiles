@@ -40,14 +40,13 @@ $ path_prepend \$PATH /e
 /e:/a:/b/c:/d
 $ path_prepend \$PATH /d
 /d:/a:/b/c
-
-Warning: Does not handle paths containing newlines
 EOF
         return 1
     fi
 
-    local p=$(path_remove "$1" "$2")
-    echo "$2${p:+":$p"}"
+    local _df_path
+    _df_path_remove "$1" "$2"
+    printf '%s\n' "$2${_df_path:+":$_df_path"}"
 }
 
 function path_remove() {
@@ -62,14 +61,28 @@ $ path_remove \$PATH /d
 /a:/b/c
 $ path_remove \$PATH /e
 /a:/b/c:/d
-
-Warning: Does not handle paths containing newlines
 EOF
         return 1
     fi
 
-    local p=$(echo "$1" | tr ":" "\n" | grep -v "^$2\$" | tr "\n" ":")
-    echo ${p%:}
+    local _df_path
+    _df_path_remove "$1" "$2"
+    printf '%s\n' "$_df_path"
+}
+
+# Sets $_df_path to $1 with every occurrence of $2 removed. Uses only parameter
+# expansion, since spawning processes here made shell startup slow. Callers
+# should declare _df_path local.
+function _df_path_remove() {
+    _df_path=":$1:"
+    while :; do
+        case "$_df_path" in
+            *:"$2":*) _df_path="${_df_path%%:"$2":*}:${_df_path#*:"$2":}" ;;
+            *) break ;;
+        esac
+    done
+    _df_path="${_df_path#:}"
+    _df_path="${_df_path%:}"
 }
 
 function df_confirm() {
