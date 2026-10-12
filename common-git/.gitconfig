@@ -49,6 +49,7 @@
 	pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 	open-pr = "!open https://github.com/\"$(git ls-remote --get-url origin | perl -pe 's/^git\\@github\\.com:(.+?)(\\.git)?$/$1/')\"/pull/new/\"$(git rev-parse --abbrev-ref HEAD)\""
+	nonascii = "!f() { git diff --name-only \"$@\" | while IFS= read -r file; do git diff \"$@\" -- \"$file\" | rg -n --color=always \"[^\\x00-\\x7F]\" | sed \"s|^|$file:|\"; done; }; f"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
