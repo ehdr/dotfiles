@@ -39,6 +39,7 @@
 	redate = "!f() { LC_ALL=C GIT_COMMITTER_DATE=\"${1:-$(date)}\" git commit --amend --no-edit --date \"${1:-$(date)}\"; }; f"
 	root = commit -m "root" --allow-empty
 	sh = status --short --branch
+	show-each = "!f() { export DELTA_PAGER='less -R' LESS=\"$LESS -K\"; for c in $(git rev-list --reverse \"$@\"); do git show \"$c\"; done; }; f"
 	spurr = pull --rebase --autostash
 	srebi = rebase --autostash -i
 	stsh = stash --keep-index
