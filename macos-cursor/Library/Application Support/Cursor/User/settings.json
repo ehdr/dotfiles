@@ -1,59 +1,75 @@
 {
-    "[dart]": {
-        "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": "off",
-        "files.trimTrailingWhitespace": true
+  "[dart]": {
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+    "files.trimTrailingWhitespace": true
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
     },
-    "[python]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        },
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.rulers": [
-            120
-        ],
-        "files.trimTrailingWhitespace": true
-    },
-    "cursor.cpp.disabledLanguages": [
-        "plaintext",
-        "scminput"
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.rulers": [
+      120
     ],
-    "diffEditor.renderSideBySide": false,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorSmoothCaretAnimation": "off",
-    "editor.fontSize": 13,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.lightbulb.enabled": "onCode",
-    "files.autoSave": "onFocusChange",
-    "git.autofetch": true,
-    "liveshare.accessibility.soundsEnabled": false,
-    "makefile.configureAfterCommand": false,
-    "makefile.configureOnEdit": false,
-    "makefile.configureOnOpen": false,
-    "markdown.updateLinksOnFileMove.enabled": "prompt",
-    "notebook.codeActionsOnSave": {
-        "notebook.source.fixAll": "explicit",
-        "notebook.source.organizeImports": "explicit"
-    },
-    "notebook.formatOnSave.enabled": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.importFormat": "absolute",
-    "python.analysis.inlayHints.functionReturnTypes": false,
-    "python.analysis.inlayHints.pytestParameters": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.typeCheckingMode": "strict",
-    "python.globalModuleInstallation": false,
-    "python.terminal.activateEnvironment": true,
-    "ruff.importStrategy": "fromEnvironment",
-    "search.smartCase": true,
-    "terminal.integrated.scrollback": 10000,
-    "window.newWindowDimensions": "maximized",
-    "window.restoreFullscreen": true,
-    "workbench.colorTheme": "Visual Studio Dark",
-    "workbench.editor.restoreViewState": true,
-    "workbench.startupEditor": "none"
+    "files.trimTrailingWhitespace": true
+  },
+  "cursor.cpp.disabledLanguages": [
+    "plaintext",
+    "scminput"
+  ],
+  "cursorpyright.analysis.autoImportCompletions": true,
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.fontSize": 13,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnType": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.lightbulb.enabled": "onCode",
+  "files.autoSave": "onFocusChange",
+  "git.autofetch": true,
+  "git.blame.statusBarItem.enabled": true,
+  "githubPullRequests.pullBranch": "prompt",
+  "go.toolsManagement.autoUpdate": true,
+  "liveshare.accessibility.soundsEnabled": false,
+  "makefile.configureAfterCommand": false,
+  "makefile.configureOnEdit": false,
+  "makefile.configureOnOpen": false,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.formatOnSave.enabled": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.inlayHints.functionReturnTypes": false,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.globalModuleInstallation": false,
+  "python.terminal.activateEnvironment": true,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "ruff.importStrategy": "fromEnvironment",
+  "search.smartCase": true,
+  "svelte.enable-ts-plugin": true,
+  "terminal.integrated.scrollback": 10000,
+  "window.autoDetectColorScheme": true,
+  "window.newWindowDimensions": "maximized",
+  "window.restoreFullscreen": true,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.editor.restoreViewState": true,
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
 }
