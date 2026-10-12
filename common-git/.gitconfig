@@ -4,7 +4,7 @@
 	email = ehdr@erichansander.com
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -FX
+	pager = "if command -v delta >/dev/null 2>&1; then exec delta; else exec less; fi"
 	commitGraph = true
 [color]
 	ui = auto
@@ -55,3 +55,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[interactive]
+	diffFilter = "if command -v delta >/dev/null 2>&1; then exec delta --color-only; else exec cat; fi"
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3
