@@ -1,5 +1,5 @@
 for dir in bin .local/bin
-    test -d "$HOME/$dir"; and fish_add_path "$HOME/$dir"
+    test -d "$HOME/$dir"; and fish_add_path -g "$HOME/$dir"
 end
 
 for dir in man .local/man

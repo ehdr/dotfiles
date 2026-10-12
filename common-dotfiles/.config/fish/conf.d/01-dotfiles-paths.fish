@@ -1,1 +1,1 @@
-fish_add_path "$HOME/dotscripts"
+fish_add_path -g "$HOME/dotscripts"

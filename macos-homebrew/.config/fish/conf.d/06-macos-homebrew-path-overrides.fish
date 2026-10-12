@@ -7,7 +7,7 @@ for util in coreutils findutils grep gawk gnu-sed gnu-tar gnu-indent gnu-which
     if not test -d "$bin_dir"
         echo "macos-homebrew: failed to find $util - not adding to \$PATH" >&2
     else
-        fish_add_path "$bin_dir"
+        fish_add_path -g "$bin_dir"
     end
 
     set -l man_dir "$util_path/gnuman"
@@ -22,7 +22,7 @@ for util in man-db
     if not test -d "$bin_dir"
         echo "macos-homebrew: failed to find $util - not adding to \$PATH" >&2
     else
-        fish_add_path "$bin_dir"
+        fish_add_path -g "$bin_dir"
     end
 
     set -l man_dir "$util_path/man"
@@ -37,7 +37,7 @@ for util in curl gnu-getopt
     if not test -d "$bin_dir"
         echo "macos-homebrew: failed to find $util - not adding to \$PATH" >&2
     else
-        fish_add_path "$bin_dir"
+        fish_add_path -g "$bin_dir"
     end
 
     set -l man_dir "$util_path/share/man"
