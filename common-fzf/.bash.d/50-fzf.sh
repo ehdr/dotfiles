@@ -1,3 +1,4 @@
 is_interactive_shell || return
+is_installed fzf || return
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
