@@ -1,7 +1,3 @@
-umask 077
-[ -t 0 ] && mesg n
-
-
 is_interactive_shell || return
 
 ## automatically exit shell if idle $TMOUT seconds

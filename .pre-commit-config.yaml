@@ -4,6 +4,6 @@ repos:
     hooks:
       - id: check-symlinks
       - id: end-of-file-fixer
-        files: \.(fish|sh)$
+        files: \.(fish|sh|bash|zsh)$
       - id: trailing-whitespace
-        files: \.(fish|sh)$
+        files: \.(fish|sh|bash|zsh)$

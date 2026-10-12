@@ -6,7 +6,7 @@ alias cp='cp -i'
 
 alias ppath='echo -e ${PATH//:/\\n}'
 
-alias reload_shell='exec -l "$SHELL"'
+alias reload_shell='exec -l "$DF_SHELL"'
 
 LS_COLOR_FLAG='--color=auto'
 LS_OPTIONS='-Fh $LS_COLOR_FLAG'

@@ -1,3 +1,9 @@
+if [ -n "${ZSH_VERSION-}" ]; then
+    DF_SHELL=zsh
+else
+    DF_SHELL=bash
+fi
+
 export TERM_COLOR_ENABLED=false
 if [ -t 1 ]; then
     ncolors=$(tput colors)
@@ -8,11 +14,14 @@ if [ -t 1 ]; then
 fi
 
 function is_color_capable_shell() {
-    [ "$TERM_COLOR_ENABLED" == true ]
+    [ "$TERM_COLOR_ENABLED" = true ]
 }
 
 function is_interactive_shell() {
-    [ -n "${PS1-}" ]
+    case $- in
+        *i*) return 0 ;;
+    esac
+    return 1
 }
 
 function is_installed() {
@@ -64,7 +73,8 @@ EOF
 }
 
 function df_confirm() {
-    read -p "${1:-'Ok?'} [y/N] " yn
+    printf '%s [y/N] ' "${1:-Ok?}"
+    read yn
     case $yn in
         [Yy]*) return 0; ;;
     esac

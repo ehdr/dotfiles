@@ -6,23 +6,23 @@ function git-prune-merged-branches () {
 
     echo "Checking merged branches against main branch '$main_branch'..."
 
-    local merged_branches=""
+    local merged_branches=()
     for b in $(git for-each-ref refs/heads --format="%(refname:short)" | grep -v ${main_branch}); do
         # git cherry prefixes each commit with "+" if it's not included and "-" if it is, so check if there are no "+" lines:
         if [[ ! $(git cherry ${main_branch} ${b} | grep "^+") ]]; then
-            merged_branches="${merged_branches} ${b}"
+            merged_branches+=("${b}")
         fi
     done
 
-    local branches_to_delete=""
-    for b in ${merged_branches}; do
+    local branches_to_delete=()
+    for b in "${merged_branches[@]}"; do
         if df_confirm "Delete branch: ${b}?"; then
-            branches_to_delete="${branches_to_delete} ${b}"
+            branches_to_delete+=("${b}")
         fi
     done
 
-    if [ -n "${branches_to_delete}" ]; then
-        git branch -D ${branches_to_delete}
+    if [ ${#branches_to_delete[@]} -gt 0 ]; then
+        git branch -D "${branches_to_delete[@]}"
     fi
 }
 

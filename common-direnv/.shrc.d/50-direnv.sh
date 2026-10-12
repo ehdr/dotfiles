@@ -1,4 +1,4 @@
 is_interactive_shell || return
 is_installed direnv || return
 
-eval "$(direnv hook bash)"
+eval "$(direnv hook $DF_SHELL)"
