@@ -28,6 +28,8 @@
 	it = "!git init && git commit -m 'root' --allow-empty"
 	lb = branch --sort='committerdate' --format='%(color:green)%(committerdate:short)%09%(color:yellow)%(HEAD) %(refname:short)'
 	lg = log --pretty=format:\"%Cred%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset %C(blue)<%an>%Creset\" --graph --date=short
+	nonascii = "!f() { git diff --name-only \"$@\" | while IFS= read -r file; do git diff \"$@\" -- \"$file\" | rg -n --color=always \"[^\\x00-\\x7F]\" | sed \"s|^|$file:|\"; done; }; f"
+	nonascii-log = "!f() { git rev-list --abbrev-commit \"$@\" | while read -r c; do git log -1 --format=%B \"$c\" | rg -n --color=always \"[^\\x00-\\x7F]\" | sed \"s|^|$c:|\"; done; }; f"
 	ol = log --pretty=oneline --abbrev-commit
 	please = push --force-with-lease
 	push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
@@ -49,7 +51,6 @@
 	pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 	open-pr = "!open https://github.com/\"$(git ls-remote --get-url origin | perl -pe 's/^git\\@github\\.com:(.+?)(\\.git)?$/$1/')\"/pull/new/\"$(git rev-parse --abbrev-ref HEAD)\""
-	nonascii = "!f() { git diff --name-only \"$@\" | while IFS= read -r file; do git diff \"$@\" -- \"$file\" | rg -n --color=always \"[^\\x00-\\x7F]\" | sed \"s|^|$file:|\"; done; }; f"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
