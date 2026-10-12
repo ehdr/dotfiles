@@ -70,3 +70,11 @@ function df_confirm() {
     esac
     return 1
 }
+
+function df_log() {
+    echo "dotfiles: $*"
+}
+
+function df_error() {
+    echo "dotfiles error: $*" >&2
+}
