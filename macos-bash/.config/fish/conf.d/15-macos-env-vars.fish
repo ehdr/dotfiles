@@ -1,5 +1,3 @@
-fish_add_path "/Applications/Xcode.app/Contents/Developer/usr/bin"
-
 is_interactive_shell; or return
 
 if not is_installed gls
