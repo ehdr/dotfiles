@@ -1,4 +1,4 @@
-test -x /opt/homebrew/bin/brew; or return
+is_installed /opt/homebrew/bin/brew; or return
 
 for util in coreutils findutils grep gawk gnu-sed gnu-tar gnu-indent gnu-which
     set -l util_path "$HOMEBREW_PREFIX/opt/$util/libexec"
