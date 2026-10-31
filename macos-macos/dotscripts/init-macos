@@ -51,6 +51,7 @@ defaults write com.apple.TextEdit ShowRuler -bool false
 
 echo "- security, login"
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+"$(dirname "$0")/enable-sudo-touchid"
 
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 defaults write -g RetriesUntilHint -int 0

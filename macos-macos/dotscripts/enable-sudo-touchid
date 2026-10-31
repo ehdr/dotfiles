@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Enable Touch ID for sudo via /etc/pam.d/sudo_local, which survives macOS
+# updates (see /etc/pam.d/sudo_local.template). Safe to re-run, e.g. after
+# installing pam-reattach, which makes Touch ID work inside tmux.
+
+set -eu
+
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+target=/etc/pam.d/sudo_local
+reattach="${HOMEBREW_PREFIX:-/opt/homebrew}/lib/pam/pam_reattach.so"
+
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+
+{
+  echo "# sudo_local: local config file which survives system update and is included for sudo"
+  echo "# Managed by ~/dotscripts/enable-sudo-touchid"
+  if [ -f "$reattach" ]; then
+    echo "auth       optional       $reattach ignore_ssh"
+  else
+    echo "pam-reattach not installed, Touch ID will not work inside tmux" >&2
+  fi
+  echo "auth       sufficient     pam_tid.so"
+} > "$tmp"
+
+if cmp -s "$tmp" "$target"; then
+  echo "Touch ID for sudo is already enabled"
+  exit 0
+fi
+
+sudo install -m 444 -o root -g wheel "$tmp" "$target"
+echo "Touch ID for sudo enabled in $target"
