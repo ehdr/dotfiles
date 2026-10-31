@@ -1,3 +1,5 @@
+test -d "$HOME/.docker/bin"; and fish_add_path -g "$HOME/.docker/bin"
+
 is_interactive_shell; or return
 is_installed docker; or return
 
