@@ -1,4 +1,5 @@
 is_installed /opt/homebrew/bin/brew || return
+df_flag DF_HOMEBREW_PATH_OVERRIDES || return
 
 for util in coreutils findutils grep gawk gnu-sed gnu-tar gnu-indent gnu-which; do
     util_path="${HOMEBREW_PREFIX}/opt/${util}/libexec"
@@ -29,7 +30,6 @@ for util in man-db; do
         MANPATH=$(path_prepend "$MANPATH" "$man_dir")
     fi
 done
-
 
 for util in curl gnu-getopt; do
     util_path="${HOMEBREW_PREFIX}/opt/${util}"
