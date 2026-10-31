@@ -28,6 +28,17 @@ function is_installed() {
     command -v "$1" 2>&1 > /dev/null
 }
 
+function df_flag() {
+    local _df_default="${2:-true}" _df_value
+    eval "_df_value=\${$1-\$_df_default}"
+    case "$_df_value" in
+        true) return 0 ;;
+        false) return 1 ;;
+    esac
+    df_error "$1: expected true or false, got '$_df_value'"
+    [ "$_df_default" = true ]
+}
+
 function path_prepend() {
     if [ -z "$2" ]; then
         >&2 cat <<EOF
