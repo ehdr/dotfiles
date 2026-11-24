@@ -6,8 +6,7 @@ fi
 
 export TERM_COLOR_ENABLED=false
 if [ -t 1 ]; then
-    ncolors=$(tput colors)
-    if test -n "$ncolors" && test $ncolors -ge 8; then
+    if ncolors=$(tput colors 2>/dev/null) && [ "$ncolors" -ge 8 ]; then
         TERM_COLOR_ENABLED=true
     fi
     unset ncolors

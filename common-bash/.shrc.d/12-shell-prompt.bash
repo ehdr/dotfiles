@@ -4,27 +4,27 @@ is_interactive_shell || return
 prompt_character() {
     local last_status=$1
     local character='$'
-    local color=""
-    local reset_color="\[$(tput sgr0)\]"
+    local color
 
     if [ -n "$LOGNAME" -a "$LOGNAME" = "$(whoami)" ]; then
-        color="\[$(tput setaf 6)\]" # cyan
+        color=6 # cyan
     elif [ -n "$USER" -a "$USER" = "root" ]; then
-        color="\[$(tput setaf 4)\]" # blue
+        color=4 # blue
         character='#'
     else
-        color="\[$(tput setaf 5)\]" # magenta
+        color=5 # magenta
+    fi
+
+    if ! is_color_capable_shell; then
+        echo "$character"
+        return
     fi
 
     if [ "$last_status" != "0" ]; then
-        color="\[$(tput setaf 1)\]" #red
+        color=1 # red
     fi
 
-    if is_color_capable_shell; then
-        echo "$color$character$reset_color"
-        return
-    fi
-    echo "$character"
+    printf '\\[%s\\]%s\\[%s\\]\n' "$(tput setaf "$color")" "$character" "$(tput sgr0)"
 }
 
 dynamic_prompt() {
