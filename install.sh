@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -eu
-set -o pipefail
 
 packages="common-* $*"
 echo "Installing packages: $packages"
